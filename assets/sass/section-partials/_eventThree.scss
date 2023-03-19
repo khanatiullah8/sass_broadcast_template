@@ -1,0 +1,40 @@
+/* eventThree section styling starts here */
+
+.eventThree {
+  &__wrapper {
+    width: 100%;
+    padding: 96px 5% 91px;
+    @include flex-common;
+    @include flex-direction(column);
+    background-color: $bg-event3;
+    @include responsive-max(1024) { padding: 70px 3%; }
+  }
+
+  &__gallery--lists {
+    @include display-flex;
+    gap: 44px;
+    @include responsive-max(1024) { gap: 25px; }
+    @include responsive-max(995) { @include flex-wrap; }
+    @include responsive-max(767) { @include justify-content(center); }
+
+    li {
+      @include flex-basis(33%);
+      border-radius: 5px;
+      @include display-flex;
+      overflow: hidden;
+      @include flex-direction(column);
+      background-color: $bg-para;
+      @include responsive-max(995) { @include flex-basis(48%); }
+      @include responsive-max(767) { @include flex-basis(90%); }
+      @include responsive-max(540) { @include flex-basis(100%); }
+    }
+    
+    p {
+      padding: 28px;
+      line-height: 1.7;
+      @include responsive-max(1024) { padding: 10px 25px; }
+    }
+  }
+}
+
+/* eventThree section styling ends here */

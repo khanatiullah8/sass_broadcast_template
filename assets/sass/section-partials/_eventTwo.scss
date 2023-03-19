@@ -1,0 +1,109 @@
+/* eventTwo section styling starts here */
+
+.eventTwo {
+  &__wrapper {
+    width: 100%;
+    padding: 96px 5% 91px;
+    @include flex-common(flex-start, center);
+    @include flex-direction(column);
+    background-color: $bg-event2;
+
+    @include responsive-max(1024) {
+      padding: 70px 3%;
+      @include align-items(center);
+    }
+  }
+
+  &__gallery {
+    @include flex-common(flex-start, center);
+    gap: 38px;
+    @include responsive-max(1280) { gap: 25px; }
+    
+    @include responsive-max(1024) {
+      @include align-items(center);
+      @include flex-direction(column);
+    }
+
+
+    &--controls {
+      margin-left: 6px;
+      @include flex-common(flex-start, center);
+      @include flex-direction(column);
+      @include flex-basis(39.5%);
+      gap: 9px;
+
+      @include responsive-max(1280) {
+        margin-left: 0;
+        @include flex-basis(45%); 
+      }
+
+      @include responsive-max(1024) {
+        width: 100%;
+        @include align-items(center);
+        @include flex-direction(row);
+        gap: 25px;
+      }
+
+      @include responsive-max(995) {
+        width: auto;
+        @include flex-direction(column);
+        gap: 10px;
+      }
+      
+
+      li {
+        width: 100%;
+
+        &:nth-child(1) {
+          a {
+            background-color: $clr-pink;
+            color: $clr-white;
+          }
+        }
+      }
+
+      a {
+        padding: 11px 15px;
+        border-radius: 4px;
+        display: block;
+        background-color: $bg-para;
+        color: $clr-para;
+        font-size: 15px;
+
+        @include responsive-min(1024) {
+          &:hover {
+            background-color: $clr-pink;
+            color: $clr-white;
+          }
+        }
+      }
+    }
+
+    &--lists {
+      @include flex-common(flex-start, center);
+      @include flex-wrap;
+      gap: 32px;
+      @include responsive-max(1280) { gap: 25px; }
+      @include responsive-max(1024) { @include justify-content(space-between); }
+      
+      @include responsive-max(767) {
+        @include flex-wrap;
+        @include justify-content(center);
+      }
+
+      li {
+        border-radius: 5px;
+        @include flex-common;
+        overflow: hidden;
+        @include responsive-max(1280) { @include flex-basis(31.3%); }
+        @include responsive-max(995) { @include flex-basis(48%); }
+        @include responsive-max(767) { @include flex-basis(90%); }
+        @include responsive-max(540) { @include flex-basis(100%); }
+      }
+
+      a { width: 100%; }
+    }
+  }
+}
+
+/* eventTwo section styling ends here */

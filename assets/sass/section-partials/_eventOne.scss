@@ -1,0 +1,36 @@
+/* eventOne section styling starts here */
+
+.eventOne {
+  &__wrapper {
+    width: 100%;
+    padding: 96px 5% 91px;
+    @include flex-common;
+    @include flex-direction(column);
+    background-color: $bg-event1;
+    @include responsive-max(1024) { padding: 70px 3%; }
+  }
+
+  &__lists {
+    @include flex-common;
+    gap: 50px;
+    @include responsive-max(1024) { gap: 25px; }
+    @include responsive-max(767) { @include flex-wrap; }
+      
+      li {
+      border-radius: 5px;
+      overflow: hidden;
+      background-color: $bg-para;
+      @include responsive-max(767) { @include flex-basis(90%); }
+      @include responsive-max(540) { @include flex-basis(100%); }
+    }
+
+    a { width: 100%; }
+    
+    p {
+      padding: 28px;
+      @include responsive-max(1024) { padding: 10px 25px; }
+    }
+  }
+}
+
+/* eventOne section styling ends here */

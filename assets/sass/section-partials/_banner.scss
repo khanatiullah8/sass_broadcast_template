@@ -1,0 +1,65 @@
+/* banner section styling starts here */
+
+.banner {
+  &__wrapper {
+    width: 100%;
+    position: relative;
+    @include responsive-max(767) { height: 100vh; }
+  }
+
+  &__figure {
+    height: 100%;
+
+    img {
+      height: 100%;
+      @include object;
+    }
+  }
+
+  &__content {
+    position: absolute;
+    top: 49.5%;
+    left: 50%;
+    color: $clr-white;
+    font-weight: 600;
+    text-align: center;
+    @include transform(translate(-50%,-50%));
+    @include responsive-max(1024) { width: 80%; }
+    @include responsive-max(767) { width: 100%; }
+
+    h1 {
+      font-size: 55px;
+      @include responsive-max(995) { font-size: 40px; }
+      @include responsive-max(480) { font-size: 30px; }
+    }
+
+    p {
+      margin: 31px 0 36px;
+      color: $clr-white;
+      font-size: 20px;
+      line-height: 1.9;
+
+      @include responsive-max(995) {
+        margin: 15px 0;
+        font-size: 18px;  
+      }
+    }
+  }
+
+  &__button {
+    padding: 15px 26px;
+    border: 2px solid $clr-white;
+    border-radius: 3px;
+    color: $clr-white;
+    font-size: 20px;
+
+    @include responsive-min(1024) {
+      &:hover {
+        background-color: $clr-white;
+        color: $bg-header;
+      }
+    }
+  }
+}
+
+/* banner section styling ends here */

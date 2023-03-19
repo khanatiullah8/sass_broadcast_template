@@ -1,0 +1,11 @@
+@import "./required-partials/variables";
+@import "./required-partials/mixins";
+@import "./required-partials/reset";
+@import "./required-partials/common";
+
+@import "./section-partials/header";
+@import "./section-partials/banner";
+@import "./section-partials/eventOne";
+@import "./section-partials/eventTwo";
+@import "./section-partials/eventThree";
+@import "./section-partials/footer";

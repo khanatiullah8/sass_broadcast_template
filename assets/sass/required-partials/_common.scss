@@ -1,0 +1,68 @@
+/* common styling for all starts here */
+
+*,
+*::before,
+*::after {
+  @include box-sizing();
+  padding: 0;
+  margin: 0;
+}
+
+html { scroll-behavior: smooth; }
+span { display: inline-block; }
+a { @include transition(); }
+
+::first-letter { text-transform: uppercase; }
+
+.section-title {
+  font-size: 34px;
+  font-weight: 600;
+  color: $clr-white;
+  @include responsive-max(995) { font-size: 25px; }
+  @include responsive-max(767) { text-align: center; }
+}
+
+.eventOne__para,
+.eventTwo__para,
+.eventThree__para {
+  margin: 26px 0 58px;
+  line-height: 2;
+}
+
+p {
+  color: $clr-para;
+  font-size: 18px;
+  line-height: 1.5;
+  word-spacing: 1px;
+  @include responsive-max(1280) { font-size: 16px; }
+  @include responsive-max(767) { text-align: center; }
+}
+
+.eventOne__lists,
+.eventTwo__gallery--lists,
+.eventThree__gallery--lists {
+  a {
+    overflow: hidden;
+    position: relative;
+    color: $bg-para;
+
+    &::before {
+      @include fontAwesome(#{$play-icon});
+      z-index: 1;
+      font-size: 47px;
+      @include responsive-max(995) { font-size: 30px; }
+    }
+
+    & img { @include transition; }
+
+    @include responsive-min(1024) {
+      &:hover {
+        color: $clr-pink;
+  
+        & img { @include transform(scale(1.1)); } 
+      }
+    }
+  }
+}
+
+/* common styling for all ends here */

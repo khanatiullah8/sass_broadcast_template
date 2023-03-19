@@ -1,0 +1,113 @@
+/* header section styling starts here */
+
+$h: 'header';
+
+header {
+  position: relative;
+  
+  .#{$h}__wrapper {
+    width: 100%;
+    padding: 16px 1.5%;
+    @include flex-common(center, space-between);
+    position: relative;
+    z-index: 1;
+    background-color: rgba(16, 29, 58, .9);
+    @include responsive-max(1024) { padding: 16px 3%; }
+    
+    @at-root {
+      .#{$h}__hamburger {  
+        @include flex-common(center, flex-start);
+        overflow: hidden;
+        z-index: 4;
+        cursor: pointer;
+        gap: 8px;
+        
+        &--bar {
+          width: 13px;
+          height: 2px;
+          border-radius: 2px;
+          position: relative;
+          top: 4px;
+          background-color: $clr-white;
+          @include transition;
+          text-indent: -99999px;
+      
+          &::before,
+          &::after {
+            content: '';
+            width: inherit;
+            height: inherit;
+            border-radius: inherit;
+            position: absolute;
+            left: 0;
+            background-color: inherit;
+            @include transition;
+          }
+          
+          &::before { top: -8px; }
+          &::after { top: -4px; }
+        }
+        
+        span:last-child {
+          color: $clr-white;
+          font-size: 14px;
+        } 
+  
+        &:hover {
+          .#{$h}__hamburger--bar {
+            top: 0;
+            @include transform(rotate(45deg));
+           
+            &::before { display: none; }
+            
+            &::after {
+              top: 0;
+              @include transform(rotate(-90deg));
+            }
+          }
+        } 
+      }
+  
+      .#{$h}__nav {
+        width: 100%;
+        height: 100vh;
+        @include flex-common;
+        position: fixed;
+        z-index: 3;
+        top: 0;
+        left: -100%;
+        background-color: $bg-header;
+        opacity: 0;
+        @include transition;
+  
+        &--menu {
+          li {
+            margin: 10px;
+            display: block;
+          }
+          
+          a {
+            padding: 5px;
+            display: block;
+            color: $clr-white;
+            font-size: 18px;
+            font-weight: 600;
+            text-align: center;
+            text-transform: capitalize;
+  
+            &:hover {
+              color: $clr-pink;
+            }
+          }
+        }
+  
+        .#{$h}__hamburger:hover ~ & {
+          left: 0;
+          opacity: 1;
+        }
+      }
+    }
+  }
+}
+
+/* header section styling ends here */
